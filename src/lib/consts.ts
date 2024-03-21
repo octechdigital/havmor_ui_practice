@@ -22,8 +22,18 @@ export const LANGUAGES: Record<LANGUAGE, string> = {
 };
 
 export const ROUTES = {
-  LOGIN: "/",
-  PRIVATE_ROUTE: "/private",
+  HOME: "/",
+  // REGISTER: "/",
+  USER_DETAIL: "/user",
+  // USER_DETAIL: "/",
+  TERMSANDCODITIONS: "/tandc",
+  PLAYMORE_QUIZ: "/playquiz",
+  QUIZ: "/quiz",
+  LEADERBOARD: "/leaderboard",
+  SHAREREFERRAL: "/share",
+  // CONGRATULATIONS: "/congratulation",
+  // CONGRATULATIONS: "/",
+  // CONGRATULATIONS: "/",
   // SOCIAL_PROFILE: (profileId: string) => "/profile/" + profileId,
   // GAME_CITY: (city: string) => "/city/" + city,
   // USER_PROFILE: (action: "edit" | "view") => "/user-profile/" + action,

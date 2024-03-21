@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from "react";
-import { HashLoader } from "react-spinners";
+import {BarLoader, HashLoader} from "react-spinners";
 
 type ContextType = {
   showLoader: (loaderTitle?: string) => void;
@@ -37,6 +37,7 @@ const styles: Record<string, React.CSSProperties> = {
     textAlign: "center",
     color: "#fff",
   },
+
 };
 
 const GlobalLoaderContext = createContext(initalState);
@@ -47,7 +48,7 @@ export const GlobalLoader: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [loaderTitle, setLoaderTitle] = useState("");
-
+  const [fillLevel, setFillLevel] = useState(0);
   const showLoader = (loaderTitle?: string) => {
     setIsVisible(true);
     setLoaderTitle(loaderTitle || "Loading...");
@@ -57,6 +58,13 @@ export const GlobalLoader: React.FC<{ children: React.ReactNode }> = ({
     setIsVisible(false);
   };
 
+  //
+  const fillGlass = () => {
+    if (fillLevel < 100) {
+      setFillLevel(fillLevel + 10);
+    }
+  };
+
   const renderComponent = () => {
     if (!isVisible) {
       return null;
@@ -64,12 +72,13 @@ export const GlobalLoader: React.FC<{ children: React.ReactNode }> = ({
     return (
       <div className="global-loader" style={styles.loader}>
         <div className="center" style={styles.center}>
-          <HashLoader color="#d02030" />
+          <HashLoader color="#BD001C" />
           <p className="title" style={styles.title}>
             {loaderTitle}
           </p>
         </div>
       </div>
+
     );
   };
 
