@@ -1,0 +1,150 @@
+// @font-face {
+//   font-family: verlag;
+//   font-weight: bold;
+//   src: url(../assets/fonts/Verlag-Black.otf);
+// }
+
+// @import "mixins";
+
+body {
+  margin: 0;
+  margin: 0;
+  padding: 0;
+  // --green: #03a651;
+  // background-color: var(--bg-blue);
+  // font-family: myriad;
+}
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  padding: 8px 20px 6px;
+  font-family: myriad;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover:not(:disabled) {
+    transform: scale(1.02);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  &.btn-primary {
+    background-color: var(--bg-red);
+    color: white;
+    border-radius: 6px;
+    border-bottom: 3px solid var(--grey);
+  }
+  &.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+  &.btn-yellow {
+    background: #fbd101;
+    color: var(--bg-red);
+    border-radius: 30px;
+  }
+  &.btn-red {
+    background: #d02030;
+    color: white;
+    border-radius: 30px;
+  }
+  &.btn-white {
+    color: #d02030;
+    background: white;
+  }
+  &.btn-dark {
+    background: var(--grey);
+    color: #fff;
+    border-radius: 30px;
+  }
+}
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  user-select: none;
+  text-align: start;
+  color: white;
+  .link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked {
+      ~ {
+        .checkmark {
+          background-color: white;
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: grey;
+    border-radius: 50%;
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 4px;
+      width: 5px;
+      height: 9px;
+      border: solid var(--bg-red);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+input {
+  padding: 15px 10px;
+  font-size: 15px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "myriad";
+}
+
+.grecaptcha-badge {
+  bottom: 40px !important;
+}
+.Toastify__toast-theme--light {
+  background: var(--bg-red);
+  color: white;
+  &.Toastify__toast--success {
+    background: var(--bg-blue);
+  }
+}
